@@ -20,7 +20,7 @@ class Promise2 {
   }
   
   constructor(fn) {
-    fn(this.resolve, this.reject)
+    fn(this.resolve.bind(this), this.reject.bind(this))
   }
 
   then(succeed, fail) {
